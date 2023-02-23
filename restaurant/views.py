@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from .models import Restaurant
+
+
+class restaurant(ListView):
+    """Restaurant List View"""
+
+    model = Restaurant
+    template_name = "home.html"

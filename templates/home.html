@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for restaurant in restaurant_list %}
+    <div class="post-entry">
+      <h2><a href="#">{{ restaurant.restaurant_name }}</a></h2>
+      <p></p>
+    </div>
+  {% endfor %}
+{% endblock content %}

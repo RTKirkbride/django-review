@@ -11,7 +11,7 @@ class Restaurant(models.Model):
 
     def __str__(self):
         """String method"""
-        return self.restaurant
+        return self.restaurant_name
 
     def get_absolute_url(self):
         """Get absolute URL"""
