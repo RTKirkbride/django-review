@@ -5,12 +5,17 @@ from django.urls import reverse
 class Review(models.Model):
     """Review model class"""
 
-    # restaurants = models.ForeignKey(
-    #    "restaurant_name",
-    #    on_delete=models.CASCADE,
-    # )
+    restaurants = models.ForeignKey(
+        "restaurant_name",
+        on_delete=models.CASCADE,
+    )
 
-    # User id foreign key
+    username = models.ForeignKey(
+        "auth.user",
+        on_delete=models.CASCADE,
+        related_name="reviews",
+    )
+
     review_title = models.CharField(max_length=200)
     email = models.EmailField()
     body = models.TextField(max_length=500)
