@@ -1,12 +1,14 @@
 from django.db import models
 from django.urls import reverse
+from restaurant.models import Restaurant  # Trying something New
 
 
 class Review(models.Model):
     """Review model class"""
 
     restaurants = models.ForeignKey(
-        "restaurant_name",
+        # "restaurant_name",
+        Restaurant,  # Trying something New
         on_delete=models.CASCADE,
     )
 
