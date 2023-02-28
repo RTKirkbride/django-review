@@ -21,10 +21,11 @@ class Restaurant(models.Model):
 class Review(models.Model):
     """Review model class"""
 
-    restaurants = models.ForeignKey(
+    restaurant = models.ForeignKey(
         # "restaurant_name",
         Restaurant,  # Trying something New
         on_delete=models.CASCADE,
+        # related_name="restaurant",
     )
 
     username = models.ForeignKey(
@@ -42,7 +43,7 @@ class Review(models.Model):
 
     def __str__(self):
         """String method"""
-        return self.reviews
+        return self.review_title
 
     def get_absolute_url(self):
         return reverse("reviews_detail", kwargs={"pk": self.pk})
