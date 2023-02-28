@@ -15,3 +15,10 @@ class RestaurantReviewDetail(DetailView):
 
     model = Review
     template_name = "restaurant_reviews.html"
+
+
+class RestaurantRviewList(ListView):
+    """Review list view"""
+
+    model = Review
+    template_name = "restaurant_reviews.html"
