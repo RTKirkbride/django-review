@@ -7,12 +7,11 @@
   </div>
 
   <h3>Reviews for this restaurant</h3>
-    {% for arestaurant in restaurant.review_title.all %}
+    {% for reviews in restaurant.review_title.all  %}
       <div class="post-entry">
-        <h2><a href="{% url 'review_detail' restaurant_name.pk %}">{{ restaurant.review_title }}</a></h2>
-        {% comment "" %} should the above line have review detail?{% endcomment %}
-        <p>{{ arestaurant.review_title}}</p>
-        <p>{{ arestaurant.body}}</p>
+        <h2><a href="{% url 'review_detail' restaurant.pk %}">{{ restaurant.review_title }}</a></h2>
+
+
       </div>
     {% endfor %}
 {% endblock content %}
