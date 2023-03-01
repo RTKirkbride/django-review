@@ -15,7 +15,7 @@ class Restaurant(models.Model):
 
     def get_absolute_url(self):
         """Get absolute URL"""
-        return reverse("restaurant_review", kwargs={"pk": self.pk})
+        return reverse("restaurant_detail", kwargs={"pk": self.pk})
 
 
 class Review(models.Model):
@@ -25,7 +25,7 @@ class Review(models.Model):
         # "restaurant_name",
         Restaurant,  # Trying something New
         on_delete=models.CASCADE,
-        related_name="restaurants",
+        related_name="restaurant",
     )
 
     username = models.ForeignKey(

@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Restaurant, Review
 
@@ -10,15 +11,37 @@ class RestaurantListView(ListView):
     template_name = "home.html"
 
 
-class RestaurantReviewDetail(DetailView):
+class RestaurantDetailView(DetailView):
     """Review list view"""
 
+    model = Restaurant
+    template_name = "restaurant_detail.html"
+
+
+class ReviewCreateView(CreateView):
+    """Review Create View"""
+
     model = Review
-    template_name = "restaurant_reviews.html"
+    template_name = "post_new.html"
+    fields = ["restaurant_name", "review_title", "author", "body"]
 
 
-class RestaurantRviewList(ListView):
-    """Review list view"""
+class ReviewDetailView(DetailView):
+    """ "Review Detail View"""
 
     model = Review
-    template_name = "restaurant_reviews.html"
+    template_name = "review_detail.html"
+
+
+class ReviewEditView(UpdateView):
+    """Review edit View"""
+
+    model = Review
+    template_name = "review_edit.html"
+
+
+class ReviewDeleteView(DeleteView):
+    """Review delete View"""
+
+    model = Review
+    template_name = "review_delete.html"
