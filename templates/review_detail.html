@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-entry">
+  <p>User: {{ review.author }}</p>
+  <p>Rating: {{ review.rating }}</p>
+  <p>Reviw: {{ review.body }}</p>
+  <p>Created: {{ review.created }}</p>
+  <p>Updated: {{ review.updated }}</p>
+</div>
+<p><a href="{% url 'review_edit' review.pk %}">+ Edit Review</a></p>
+<p><a href="{% url 'review_delete' review.pk %}">- Delete Review</p>
+{% endblock content %}

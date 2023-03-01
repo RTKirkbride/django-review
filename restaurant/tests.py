@@ -76,3 +76,39 @@ class RestaurantTests(TestCase):
         # add test for rating
         # add test for create date
         # add test for update date
+
+    def test_post_detailview(self):
+        """Test review detail view"""
+        response = self.client.get(
+            reverse("review_detail", kwargs={"pk": self.review.pk})
+        )
+        no_response = self.client.get("/review/100000/")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(no_response.status_code, 404)
+        self.assertContains(response, "A good title")
+        self.assertTemplateUsed(response, "review_detail.html")
+
+    def test_post_createview(self):
+        """Test review createview"""
+        response = self.client.review(
+            reverse("review_new"),
+            {
+                "body": "New text",
+                "author": self.user.id,
+            },
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Review.objects.last().body, "New text")
+
+    def test_post_updateview(self):
+        """Test update view"""
+        response = self.client.review(
+            reverse("review_edit", args="1"), {"body": "Updated text"}
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Review.objects.last().body, "Updated text")
+
+    def test_post_deleteview(self):
+        """Test post delete view"""
+        response = self.client.review(reverse("review_delete", args="1"))
+        self.assertEqual(response.status_code, 302)

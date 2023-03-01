@@ -46,4 +46,4 @@ class Review(models.Model):
         return self.review_title
 
     def get_absolute_url(self):
-        return reverse("restaurant_detail", kwargs={"pk": self.pk})
+        return reverse("review_detail", kwargs={"pk": self.pk})

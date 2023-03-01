@@ -10,9 +10,9 @@ from .views import (
 
 urlpatterns = [
     path("Review/new/", ReviewCreateView.as_view(), name="review_new"),
-    path("Review/<int:pk>/", ReviewDetailView.as_view(), name="reveiw_detail"),
+    path("Review/<int:pk>/", ReviewDetailView.as_view(), name="review_detail"),
     path("Review/<int:pk>/edit/", ReviewEditView.as_view(), name="review_edit"),
-    path("Review/<int:pk>/delete/", ReviewDeleteView.as_view(), name="reveiw_delete"),
+    path("Review/<int:pk>/delete/", ReviewDeleteView.as_view(), name="review_delete"),
     path(
         "Restaurant/<int:pk>/",
         RestaurantDetailView.as_view(),
