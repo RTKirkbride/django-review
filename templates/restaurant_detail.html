@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="post-entry">
+  <div class-"post-entry">
     <h2><a>{{ restaurant.restaurant_name }}</a></h2>
 
   </div>
 
-  <h3>Reviews for this restaurant</h3>
-    {% for reviews in restaurant.review_title.all  %}
-      <div class="post-entry">
-        <h2><a href="{% url 'review_detail' restaurant.pk %}">{{ restaurant.review_title }}</a></h2>
-
-
-      </div>
+  <h3>Reviews for this restaurant:</h3>
+    {% for restaurant in restaurant.reviews.all  %}
+    <div class-"post-entry">
+      <p>{{ restaurant.author }} - {{ restaurant.rating}}-star - Created {{ restaurant.created}} </p>
+        <p>{{restaurant.body}}</p>
+        <a href="{% url 'restaurant_detail' restaurant.pk %}">Read full review</a>
+    </div>
     {% endfor %}
 {% endblock content %}
 

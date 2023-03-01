@@ -25,10 +25,10 @@ class Review(models.Model):
         # "restaurant_name",
         Restaurant,  # Trying something New
         on_delete=models.CASCADE,
-        related_name="restaurant",
+        related_name="reviews",
     )
 
-    username = models.ForeignKey(
+    author = models.ForeignKey(  # changed to author
         "auth.user",
         on_delete=models.CASCADE,
         related_name="user",
@@ -46,4 +46,4 @@ class Review(models.Model):
         return self.review_title
 
     def get_absolute_url(self):
-        return reverse("reviews_detail", kwargs={"pk": self.pk})
+        return reverse("restaurant_detail", kwargs={"pk": self.pk})

@@ -22,8 +22,8 @@ class ReviewCreateView(CreateView):
     """Review Create View"""
 
     model = Review
-    template_name = "post_new.html"
-    fields = ["restaurant_name", "review_title", "author", "body"]
+    template_name = "review_new.html"
+    fields = ["restaurant", "rating", "author", "body"]
 
 
 class ReviewDetailView(DetailView):

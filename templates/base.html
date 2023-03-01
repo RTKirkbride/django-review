@@ -7,17 +7,15 @@
   <body>
     <div>
       <header>
-        <div class="nav-left">
+        <div class-"nav-left">
           <h1><a href="{% url 'home' %}">Populace Restaurant Reviews</a></h1>
         </div>
-        <div class="nav=right">
+      </header>
+        <div class-"nav-right">
           <a href="{% url 'review_new' %}">+ Write a Review<a/>
         </div>
-      </header>
-
       {% block content %}
       {% endblock content %}
-
     </div>
   </body>
 </html>
