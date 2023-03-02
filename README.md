@@ -1,7 +1,7 @@
 # Assignment 3 - Creating a Restaurant Rating Site
 
 ## Author
-
+Ryan Kirkbride
 
 
 ## Description
@@ -127,5 +127,7 @@ You should also be able to load bootstrap via a CDN link which will save you fro
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+I ran out of time and energy to finish Bootstrap or do testing.
+I wrote tests for most of the text inputs, but none of the numeric inputs or date,
+but I'm sure that they would need quite a bit of work to be functional.
 

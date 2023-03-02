@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-
+{% comment "" %}
+Name: Ryan Kirkbride
+Date: 3/1/2023
+Class: CIS218-Barnes
+{% endcomment %}
 {% block content %}
   <div class="post-entry">
     <h2><a>{{ restaurant.restaurant_name }}</a></h2>
@@ -11,8 +15,7 @@
     <div class="post-entry">
       <p>{{ restaurant.author }} - {{ restaurant.rating}}-star - Created {{ restaurant.created}} </p>
         <p>{{restaurant.body}}</p>
-
-        <a href="{% url 'review_detail' restaurant.pk %}">Read Review</a>
+        <button type="button" class="btn border1 border111"><a href="{% url 'review_detail' restaurant.pk %}">Read Review</a></button>
     </div>
     {% endfor %}
 {% endblock content %}

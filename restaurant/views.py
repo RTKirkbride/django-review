@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -19,7 +20,7 @@ class RestaurantDetailView(DetailView):
     template_name = "restaurant_detail.html"
 
 
-class ReviewCreateView(CreateView):
+class ReviewCreateView(LoginRequiredMixin, CreateView):
     """Review Create View"""
 
     model = Review
@@ -42,7 +43,7 @@ class ReviewDetailView(DetailView):
     template_name = "review_detail.html"
 
 
-class ReviewEditView(UpdateView):
+class ReviewEditView(LoginRequiredMixin, UpdateView):
     """Review edit View"""
 
     model = Review
@@ -50,7 +51,7 @@ class ReviewEditView(UpdateView):
     fields = ["rating", "body"]
 
 
-class ReviewDeleteView(DeleteView):
+class ReviewDeleteView(LoginRequiredMixin, DeleteView):
     """Review delete View"""
 
     model = Review

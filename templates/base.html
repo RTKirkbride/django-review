@@ -1,8 +1,13 @@
 {% load static %}
+{% comment "" %}
+Name: Ryan Kirkbride
+Date: 3/1/2023
+Class: CIS218-Barnes
+{% endcomment %}
 <html>
   <head>
     <title>Populace Restaurant Reviews</title>
-    <link rel="stylesheet" href=" {% static 'css/base.css' %}"
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>
     <div>
@@ -13,14 +18,24 @@
       </header>
       <div class="nav-right">
         {% if user.is_authenticated %}
-        <p>Hi {{ user.username }}!</p>
-        <p><a href="{% url 'review_new' %}">+ Write a Review<a/></p>
-      {% else %}
-        <p> You are not logged in.</p>
-        <a href=" {% url 'login' %}">Login</a>
-      {% endif %}
+          <p>Hi {{ user.username }}!&nbsp;</p>
+          <p><button type="button" class="btn border1 border111"><a href="{% url 'logout' %}">Logout</a></button></p>
+          <p><button type="button" class="btn border1 border111"><a href="{% url 'review_new' %}">Add Review</a></button></p>
+        {% else %}
+          <p> You are not logged in.&nbsp;</p>
+          <p>
+            <button type="button" class="btn border1 border111"><a href="{% url 'login' %}">Login</a></button>
+            <button type="button" class="btn border1 border111"><a href="{% url 'signup' %}">Sign Up</a></button>
+            </p>
+        {% endif %}
+      </div>
+      <div>
+        {% block content %}
+        {% endblock content %}
       </div>
 
     </div>
   </body>
 </html>
+
+

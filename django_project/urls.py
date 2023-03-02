@@ -1,4 +1,9 @@
-"""django_project URL Configuration
+"""
+Name: Ryan Kirkbtride
+Date: 3/1/23
+Class: CIS218 Barnes
+
+django_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -19,5 +24,6 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("accounts.urls")),
     path("", include("restaurant.urls")),
 ]

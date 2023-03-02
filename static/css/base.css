@@ -1,3 +1,7 @@
+/* Name: Ryan Kirkbride
+Date: 3/1/23
+Class: CIS 218 */
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
@@ -11,7 +15,7 @@ header {
 }
 
 header h1 a {
-    color: yellow;
+    color: black;
     text-decoration: none;
 }
 
